@@ -1,13 +1,11 @@
 ---
-name: User story template
+name: User Story Template
 about: Write issues as user story
 title: ''
 labels: ''
 assignees: ''
 
 ---
-
-# User Story Template
 
 **Title:**
 _As a [user role], I want [feature/goal], so that [reason]._
