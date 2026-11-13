@@ -1,5 +1,15 @@
 package com.project.back_end.models;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.ElementCollection;
+
+import jakarta.validation.constraints.*;
+import java.util.List;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 @Entity
 public class Doctor {
 
