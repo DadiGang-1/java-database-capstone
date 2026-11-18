@@ -1,44 +1,35 @@
 <!-- doctorDashboard.html -->
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Doctor Dashboard</title>
+
+    <link rel="icon" type="image/png" th:href="@{/assets/images/logo/logo.png}" />
+    <link rel="stylesheet" th:href="@{/assets/css/adminDashboard.css}" />
+    <link rel="stylesheet" th:href="@{/assets/css/doctorDashboard.css}" />
+    <link rel="stylesheet" th:href="@{/assets/css/style.css}" />
+
+    <script th:src="@{/js/render.js}" defer></script>
+    <script th:src="@{/js/util.js}" defer></script>
+
+    <script th:src="@{/js/components/header.js}" defer></script>
+    <script th:src="@{/js/components/footer.js}" defer></script>
+    <script th:src="@{/js/components/doctorDashboard.js}" defer></script>
+
+</head>
+<body>
+    
+</body>
+</html>
 
 <!-- 
 Step-by-Step Explanation of `doctorDashboard.html`
 This file defines the Doctor Dashboard interface, allowing doctors to view and manage their patient appointments, search records, and access patient prescriptions.
 
-1. Label the File
 
-   * Add a comment at the top to identify the file as `doctorDashboard.html`.
-
-2. Declare the Document Type
-
-   * Use `<!DOCTYPE html>` to define the document as an HTML5 file for consistent behavior across modern browsers.
-
-3. Begin the HTML Document with Thymeleaf Namespace
-
-   * The `<html>` tag includes `xmlns:th="http://www.thymeleaf.org"` to enable Thymeleaf-specific attributes used in Spring Boot applications.
-
-4. Head Section – Metadata and Assets
-
-   * Start the `<head>` section to include essential meta information, styles, and scripts.
-
-5. Set Character Encoding
-
-   * Use `<meta charset="UTF-8">` to support all text characters and prevent encoding issues.
-
-6. Set the Favicon
-
-   * Add a favicon using Thymeleaf pathing: 
-     `<link rel="icon" type="image/png" th:href="@{/assets/images/logo/logo.png}" />`
-
-7. Set the Page Title
-
-   * Title the page `"Doctor Dashboard"` to show it in the browser tab.
-
-8. Link CSS Stylesheets
-
-   * Include necessary CSS files:
-     - `adminDashboard.css` (for shared layout styles with admin interface)
-     - `doctorDashboard.css` (for doctor-specific styles)
-     - `style.css` (for general UI components)
 
 9. Link JavaScript Files (with `defer`)
 
