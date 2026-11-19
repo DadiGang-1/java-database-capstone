@@ -1,5 +1,16 @@
 /* This is the style sheet for the doctorDashboard.html */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html, body {
+  height: 100%;
+  font-family: Arial, sans-serif;
+}
+
+.table-header {
+
+}
 /* 
+
 **Table Header (`.table-header`)**
 
 * Set font size to `24px` for clear emphasis.

@@ -20,8 +20,18 @@
     <script th:src="@{/js/components/doctorDashboard.js}" defer></script>
 
 </head>
-<body>
-    
+<body onload="renderContent()">
+    <div class="container">
+        <div class="wrapper">
+            <div id="header"></div>
+            <div class="main-content">
+                <input type="text" id="searchBar" class="searchBar" placeholder="Search Bar for custom output" />
+                <button></button>
+                <select name="" id=""></select>
+            </div>
+            <div id="footer"></div>
+        </div>
+    </div>
 </body>
 </html>
 
@@ -30,41 +40,6 @@ Step-by-Step Explanation of `doctorDashboard.html`
 This file defines the Doctor Dashboard interface, allowing doctors to view and manage their patient appointments, search records, and access patient prescriptions.
 
 
-
-9. Link JavaScript Files (with `defer`)
-
-   * Load scripts using Thymeleaf's `th:src` and `defer` attribute to prevent blocking rendering:
-     - `render.js` – Handles common rendering logic.
-     - `util.js` – Provides utility functions.
-     - `header.js` and `footer.js` – Dynamically inject header/footer.
-     - `doctorDashboard.js` – Contains dashboard logic for doctor functionality, loaded as a module.
-
-10. Close the Head and Begin the Body
-
-    * Begin the visible part of the webpage using `<body onload="renderContent()">`, which calls a JavaScript function after loading.
-
-11. Create the Main Container
-
-    * Use `<div class="container">` to wrap all content and structure the page.
-
-12. Add a Wrapper for Page Content
-
-    * Nest elements inside a `wrapper` div for structured layout control.
-
-13. Insert a Header Placeholder
-
-    * Add `<div id="header"></div>` where the dynamic header will be injected.
-
-14. Define the Main Content Area
-
-    * Use `<div class="main-content">` for the central section of the dashboard.
-
-15. Add a Search Bar
-
-    * Include an input field with `id="searchBar"` for doctors to search patients or data:
-      ```html
-      <input type="text" id="searchBar" class="searchBar" placeholder="Search Bar for custom output" />
-      ```
 
 16. Add Filter Controls
 
@@ -78,15 +53,5 @@ This file defines the Doctor Dashboard interface, allowing doctors to view and m
       - Headers: Patient ID, Name, Phone No., Email, and Prescription.
       - Body: `<tbody id="patientTableBody"></tbody>` for dynamic content insertion.
 
-18. Insert a Footer Placeholder
 
-    * Use `<div id="footer"></div>` to load a common footer via JavaScript.
-
-19. Close the Wrapper and Container
-
-    * Close `wrapper` and `container` divs to maintain structural integrity.
-
-20. End the Body and HTML
-
-    * Properly close the `<body>` and `<html>` tags to complete the document.
  -->
