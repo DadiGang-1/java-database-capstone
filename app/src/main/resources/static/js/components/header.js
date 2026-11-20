@@ -1,3 +1,51 @@
+function renderHeader() {
+  let headerContent = "";
+
+  const role = localStorage.getItem("userRole");       
+  const token = localStorage.getItem("token");
+
+  if (window.location.pathname.endsWith("/")) {         
+    localStorage.removeItem("userRole");         
+    localStorage.removeItem("token");       
+  }
+
+
+  if ((role === "loggedPatient" || role === "admin" || role === "doctor") && !token) {
+    localStorage.removeItem("userRole");
+    alert("Session expired or invalid login. Please log in again.");
+    window.location.href = "/";         
+    return;
+  }
+
+  if (role === "admin") {         
+    headerContent += `           
+    <button id="addDocBtn" class="adminBtn" onclick="openModal('addDoctor')">Add Doctor</button>           
+    <a href="#" onclick="logout()">Logout</a>`;       
+  }
+  if (role === "doctor") {         
+    headerContent += `           
+    <button id="homebtn" class="homeBtn" onclick="">Home</button>           
+    <a href="#" onclick="logout()">Logout</a>`;       
+  }
+  if (role === "patient") {         
+    headerContent += `           
+    <a href="#" onclick="login()">Login</a>           
+    <a href="#" onclick="signup()">Sign Up</a>`;       
+  }
+  if (role === "loggedPatient") {         
+    headerContent += `           
+    <button id="homebtn" class="homeBtn" onclick="">Home</button>
+    <button id="appointmentbtn" class="appointmentbtn" onclick="">Appointment</button>
+    <a href="#" onclick="logout()">Logout</a>`;       
+  }
+
+  headerDiv.innerHTML = headerContent;
+  attachHeaderButtonListeners();
+
+  const headerDiv = document.getElementById("header");
+  headerDiv.innerHTML = headerContent;
+  .addEventListener()
+}
 /*
   Step-by-Step Explanation of Header Section Rendering
 

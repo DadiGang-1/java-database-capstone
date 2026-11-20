@@ -26,10 +26,27 @@
                 <label for="searchBar">searchBar</label>
                 <input type="text" id="searchBar" placeholder="search by doctor name" />
                 <label for="filter">filter</label>
-                <select name="filter" id="filter">
-                    <option value="">filter</option>
-                    <option value="time">time</option>
-                    <option value="specialty">specialty</option>
+                <<select class="filter-select" id="filterTime">
+                    <option value="">Sort by Time</option>
+                    <option value="AM">AM</option>
+                    <option value="PM">PM</option>
+                </select>
+                <select class="filter-select" id="filterSpecialty">
+                    <option value="">Filter by Specialty</option>
+                    <option value="Cardiologist">Cardiologist</option>
+                    <option value="Dermatologist">Dermatologist</option>
+                    <option value="Neurologist">Neurologist</option>
+                    <option value="Pediatrician">Pediatrician</option>
+                    <option value="Orthopedic">Orthopedic</option>
+                    <option value="Gynecologist">Gynecologist</option>
+                    <option value="Psychiatrist">Psychiatrist</option>
+                    <option value="Dentist">Dentist</option>
+                    <option value="Ophthalmologist">Ophthalmologist</option>
+                    <option value="Ent">ENT Specialist</option>
+                    <option value="Urologist">Urologist</option>
+                    <option value="Oncologist">Oncologist</option>
+                    <option value="Gastroenterologist">Gastroenterologist</option>
+                    <option value="General">General Physician</option>
                 </select>
                 <div id="content"></div>
             </main>
@@ -47,19 +64,3 @@
     <script type="module" src="../js/components/doctorCard.js" defer></script>
 </body>
 </html>
-
-
-<!-- 
-
-9. Close the Head and Begin the Body
-
-    * Start the visible part of the webpage. `onload="renderContent()"` is used to call a function when the page is ready.
-
-15. Add Filter Dropdowns
-
-    * Use two `<select>` elements:
-      - One for time (AM/PM).
-      - One for filtering by medical specialty (Cardiologist, Dentist, etc.).
-
- -->
-
