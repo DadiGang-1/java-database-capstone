@@ -1,16 +1,99 @@
+import { API_BASE_URL } from "../config/config.js";
+
+const DOCTOR_API = API_BASE_URL + '/doctor';
+
+export async function getDoctors() {
+  try {
+    const response = await fetch(`${DOCTOR_API}`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json"
+      }
+    });
+
+    if (!response.ok) {
+      throw new Error("Failed to fetch doctors");
+    }
+
+    const data = await response.json();
+    return Array.isArray(data) ? data : (Array.isArray(data.doctors) ? data.doctors : []);
+  } catch (error) {
+    console.error("Error while fetching doctors:", error);
+    return [];
+  }
+}
+
+export async function deleteDoctor(doctorId, token) {
+  try {
+    const response = await fetch(`${DOCTOR_API}/${doctorId}/${token}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json"
+      }
+    });
+
+    if (!response.ok) {
+      throw new Error("Failed to delete doctor");
+    }
+
+    const data = await response.json();
+    return {
+      success: true,
+      message: data.message || "Doctor deleted successfully"
+    };
+  } catch (error) {
+    console.error("Error while deleting doctor:", error);
+    return { success: false, message: "Failed to delete doctor" };
+  }
+}
+
+export async function saveDoctor(doctor, token) {
+  try {
+    const response = await fetch(`${DOCTOR_API}/${token}`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(doctor)
+    });
+
+    const result = await response.json();
+    if (!response.ok) {
+      throw new Error(result.message);
+    }
+    return { success: response.ok, message: result.message }
+
+  } catch (error) {
+    console.error("Error while saving doctor:", error);
+    return { success: false, message: "Failed to save doctor" };
+  }
+}
+
+export async function filterDoctors(name, time, specialty) {
+  try {
+    const response = await fetch(`${DOCTOR_API}/${name}/${time}/${specialty}`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json"
+      }
+    });
+
+    if (!response.ok) {
+      throw new Error("Failed to fetch doctors");
+    }
+
+    const data = await response.json();
+    return Array.isArray(data)
+      ? data
+      : (Array.isArray(data.doctors) ? data.doctors : []);
+
+  } catch (error) {
+    console.error("Error while filtering doctors:", error);
+    alert("Failed to fetch doctors");
+    return { doctors: [] };
+  }
+}
 /*
-  Import the base API URL from the config file
-  Define a constant DOCTOR_API to hold the full endpoint for doctor-related actions
-
-
-  Function: getDoctors
-  Purpose: Fetch the list of all doctors from the API
-
-   Use fetch() to send a GET request to the DOCTOR_API endpoint
-   Convert the response to JSON
-   Return the 'doctors' array from the response
-   If there's an error (e.g., network issue), log it and return an empty array
-
 
   Function: deleteDoctor
   Purpose: Delete a specific doctor using their ID and an authentication token

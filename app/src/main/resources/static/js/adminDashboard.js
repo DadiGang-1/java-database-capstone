@@ -1,3 +1,17 @@
+
+function loadDoctorCards() {
+
+}
+function filterDoctorsOnChange() {
+  
+}
+function renderDoctorCards() {
+  
+}
+function adminAddDoctor() {
+  
+}
+
 /*
   This script handles the admin dashboard functionality for managing doctors:
   - Loads all doctor cards

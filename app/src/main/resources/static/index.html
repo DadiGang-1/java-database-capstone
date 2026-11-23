@@ -24,13 +24,13 @@
 
             <main class="main-content">
                 <h2>Select Your Role</h2>
-                <button id="adminBtn" onclick="selectRole('Admin')">
+                <button id="adminBtn" onclick="selectRole('admin')">
                     Admin
                 </button>
-                <button id="doctorBtn" onclick="selectRole('Doctor')">
+                <button id="doctorBtn" onclick="selectRole('doctor')">
                     Doctor
                 </button>
-                <button id="patientBtn" onclick="selectRole('Patient')">
+                <button id="patientBtn" onclick="selectRole('patient')">
                     Patient
                 </button>
 
@@ -41,11 +41,11 @@
         </div>
     </div>
 
-    <div id="modal" class="modal" style="display: none;">
-        <button id="closeModal">X</button>
+    <div id="modal" class="modal">
+        <button id="closeModal"></button>
         <div id="modal-body"></div>
     </div>
 
-    <script type="module" src="../js/services/index.js" defer></script>
+    <script type="module" src="js/services/index.js" defer></script>
 </body>
 </html>
