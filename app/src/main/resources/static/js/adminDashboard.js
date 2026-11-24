@@ -6,10 +6,20 @@ document.getElementById('addDocBtn').addEventListener('click', () => {
   openModal('addDoctor');
 });
 
-window.onload()
+DOMContentLoaded
+
+window.onload() = (event) => {
+  loadDoctorCards();
+}
 
 function loadDoctorCards() {
+  (innerHTML = "")
 
+  const doctors = getDoctors();
+  doctors.forEach(doctor => {
+    createDoctorCard(doctor);
+  });
+  
 }
 function filterDoctorsOnChange() {
   
